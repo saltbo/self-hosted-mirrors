@@ -24,8 +24,13 @@
 ```bash
 git clone https://github.com/saltbo/self-hosted-mirrors.git
 cd self-hosted-mirrors
+
 cp registry/config.example.yml registry/config.yml
-vi registry/config.yml  #根据注释修改相关内容
+vi registry/config.yml  #设置您的DockerHub账户密码
+
+cp caddy/Caddyfile.example caddy/Caddyfile
+vi caddy/Caddyfile  #将域名改为您自己的域名
+
 docker-compose up -d
 ```
 
