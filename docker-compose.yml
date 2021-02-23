@@ -8,12 +8,12 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /data/mirror/caddy:/etc/caddy
-      - /data/mirror/website:/data/webroot
+      - ./caddy:/etc/caddy
+      - ./website:/data/webroot
 
   registry:
     image: registry:2
-    container_name: docker-mirror
+    container_name: docker-registry-mirror
     ports:
       - "5000:5000"
     volumes:
