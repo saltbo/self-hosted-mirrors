@@ -1,6 +1,7 @@
 # Self-hosted mirrors
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/saltbo/self-hosted-mirrors)
+[![visits](https://visitor.vercel.app/page/saltbo-self-hosted-mirrors?color=light-green)](https://github.com/saltbo/self-hosted-mirrors)
 [![License](https://img.shields.io/github/license/saltbo/self-hosted-mirrors.svg)](https://github.com/saltbo/self-hosted-mirrors/blob/master/LICENSE)
 
 ## Support Mirrors
