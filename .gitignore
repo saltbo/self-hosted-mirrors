@@ -1,3 +1,4 @@
-caches
+caches/*/*
+!caches/*/.gitkeep
 caddy/Caddyfile
 registry/config.yml
