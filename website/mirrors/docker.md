@@ -5,7 +5,9 @@ Docker镜像加速器，代理并缓存Docker镜像。你可以利用该代理�
 
 
 ## 地址
-https://mirrors.saltbo.cn/docker
+https://mirrors.saltbo.cn
+
+理想情况下，我们希望使用https://mirrors.saltbo.cn/docker，但是目前因为docker并不支持path，所以先用跟路径吧
 
 
 ## 使用帮助
@@ -17,7 +19,7 @@ https://mirrors.saltbo.cn/docker
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://mirrors.saltbo.cn/docker"]
+  "registry-mirrors": ["https://mirrors.saltbo.cn"]
 }
 EOF
 sudo systemctl daemon-reload
