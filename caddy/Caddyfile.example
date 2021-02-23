@@ -1,8 +1,8 @@
-mirrors.saltbo.cn
+mirrors.example.com
 
 root * /data/webroot
 file_server
 
 reverse_proxy /v2/* docker-registry-mirror:5000
 
-reverse_proxy /ca43902/* 192.168.0.1:37270
+reverse_proxy /wss/* 192.168.0.1:37270
