@@ -23,9 +23,9 @@ services:
   goproxy:
     image: goproxy/goproxy:latest
     container_name: goproxy
-    command: "-listen=0.0.0.0:8081 -cacheDir=/ext"
+    command: "-listen=0.0.0.0:5100 -cacheDir=/ext"
     ports:
-    - "8081:8081"
+    - "5100:5100"
     volumes:
       - ./caches/go-modules:/ext
 
