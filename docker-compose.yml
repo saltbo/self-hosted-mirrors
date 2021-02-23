@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  caddy:
+    image: caddy
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /data/mirror/caddy:/etc/caddy
+      - /data/mirror/website:/data/webroot
+
+  registry:
+    image: registry:2
+    container_name: docker-mirror
+    ports:
+      - "5000:5000"
+    volumes:
+      - /etc/docker/registry:/etc/docker/registry
+      - /var/lib/registry:/var/lib/registry
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 192.168.0.0/24
