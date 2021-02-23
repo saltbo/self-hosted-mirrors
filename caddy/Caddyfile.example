@@ -5,4 +5,14 @@ file_server
 
 reverse_proxy /v2/* docker-registry-mirror:5000
 
+route /goproxy/* {
+  uri strip_prefix /goproxy
+  reverse_proxy goproxy:5100
+}
+
+route /npm/* {
+  uri strip_prefix /npm
+  reverse_proxy npm-registry:4873
+}
+
 reverse_proxy /wss/* 192.168.0.1:37270

@@ -18,7 +18,24 @@ services:
       - "5000:5000"
     volumes:
       - ./registry:/etc/docker/registry
-      - /var/lib/registry:/var/lib/registry
+      - ./caches/docker-registry:/var/lib/registry
+  
+  goproxy:
+    image: goproxy/goproxy:latest
+    container_name: goproxy
+    command: "-listen=0.0.0.0:8081 -cacheDir=/ext"
+    ports:
+    - "8081:8081"
+    volumes:
+      - ./caches/go-modules:/ext
+
+  verdaccio:
+    image: verdaccio/verdaccio
+    container_name: npm-registry
+    ports:
+      - 4873:4873
+    volumes:
+      - ./caches/npm-registry:/verdaccio/storage
 
 networks:
   default:
