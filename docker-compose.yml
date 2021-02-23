@@ -17,7 +17,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - /etc/docker/registry:/etc/docker/registry
+      - ./registry:/etc/docker/registry
       - /var/lib/registry:/var/lib/registry
 
 networks:

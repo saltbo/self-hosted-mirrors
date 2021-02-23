@@ -23,6 +23,8 @@
 ```bash
 git clone https://github.com/saltbo/self-hosted-mirrors.git
 cd self-hosted-mirrors
+cp registry/config.example.yml registry/config.yml
+vi registry/config.yml  #根据注释修改相关内容
 docker-compose up -d
 ```
 
