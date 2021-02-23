@@ -1,6 +1,5 @@
 # Self-hosted mirrors
 
-[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) 
 ![GitHub repo size](https://img.shields.io/github/repo-size/saltbo/self-hosted-mirrors)
 [![License](https://img.shields.io/github/license/saltbo/self-hosted-mirrors.svg)](https://github.com/saltbo/self-hosted-mirrors/blob/master/LICENSE)
 
