@@ -8,9 +8,7 @@ storage:
   filesystem:
     rootdirectory: /var/lib/registry
 proxy:
-  remoteurl: https://registry-1.docker.io
-  username: your-username
-  password: your-password
+  remoteurl: https://gcr.io
 http:
   addr: :5000
   headers:
