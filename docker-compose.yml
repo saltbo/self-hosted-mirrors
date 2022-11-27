@@ -11,28 +11,21 @@ services:
       - ./caddy:/etc/caddy
       - ./website:/data/webroot
 
-  registry:
+  mirror-dockerhub:
     image: registry:2
-    container_name: docker-registry-mirror
-    ports:
-      - "5000:5000"
+    container_name: mirror-dockerhub
+    command: "/etc/docker/registry/dockerhub.yml"
     volumes:
       - ./registry:/etc/docker/registry
-      - ./caches/docker-registry:/var/lib/registry
+      - ./caches/docker-registry/dockerhub:/var/lib/registry
 
-  docker-registry-proxy:
-    image: rpardini/docker-registry-proxy:0.6.1 # Check and make sure this is the last released version
-    container_name: docker-registry-proxy
-    env_file: # This contains REGISTRIES and AUTH_REGISTRIES
-      - ./secrets.env
-    environment:
-      - CACHE_MAX_SIZE=256g
-      - ENABLE_MANIFEST_CACHE=true
+  mirror-gcr:
+    image: registry:2
+    container_name: mirror-gcr
+    command: "/etc/docker/registry/gcr.yml"
     volumes:
-      - ./docker_mirror_cache:/docker_mirror_cache # This will be up to CACHE_MAX_SIZE big
-      - ./docker_mirror_certs:/ca
-    ports:
-      - 0.0.0.0:3128:3128 # 0.0.0.0 binds to all interfaces
+      - ./registry:/etc/docker/registry
+      - ./caches/docker-registry/gcr:/var/lib/registry
 
   goproxy:
     image: goproxy/goproxy:latest
