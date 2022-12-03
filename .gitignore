@@ -2,6 +2,7 @@ caches/*/*
 !caches/*/.gitkeep
 caddy/Caddyfile
 registry/*.yml
+!registry/*.example.yml
 docker_mirror_cache
 docker_mirror_certs
 secrets*

@@ -11,6 +11,18 @@ route /gcr/* {
   reverse_proxy mirror-gcr:5000
 }
 
+route /ghcr/* {
+  uri strip_prefix /ghcr
+  rewrite * /v2{uri}
+  reverse_proxy mirror-ghcr:5000
+}
+
+route /quay/* {
+  uri strip_prefix /quay
+  rewrite * /v2{uri}
+  reverse_proxy mirror-quay:5000
+}
+
 route /goproxy/* {
   uri strip_prefix /goproxy
   reverse_proxy goproxy:5100

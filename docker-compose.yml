@@ -18,7 +18,6 @@ services:
     volumes:
       - ./registry:/etc/docker/registry
       - ./caches/docker-registry/dockerhub:/var/lib/registry
-
   mirror-gcr:
     image: registry:2
     container_name: mirror-gcr
@@ -26,6 +25,20 @@ services:
     volumes:
       - ./registry:/etc/docker/registry
       - ./caches/docker-registry/gcr:/var/lib/registry
+  mirror-ghcr:
+    image: registry:2
+    container_name: mirror-ghcr
+    command: "/etc/docker/registry/ghcr.yml"
+    volumes:
+      - ./registry:/etc/docker/registry
+      - ./caches/docker-registry/ghcr:/var/lib/registry
+  mirror-quay:
+    image: registry:2
+    container_name: mirror-quay
+    command: "/etc/docker/registry/quay.yml"
+    volumes:
+      - ./registry:/etc/docker/registry
+      - ./caches/docker-registry/quay:/var/lib/registry
 
   goproxy:
     image: goproxy/goproxy:latest
