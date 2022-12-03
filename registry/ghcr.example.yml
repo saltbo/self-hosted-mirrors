@@ -8,7 +8,7 @@ storage:
   filesystem:
     rootdirectory: /var/lib/registry
 proxy:
-  remoteurl: https://gcr.io
+  remoteurl: https://ghcr.io
 http:
   addr: :5000
   headers:
